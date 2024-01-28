@@ -8,7 +8,7 @@ class Parser:
         self.look_ahaed: str = self.expr[0]
         self.parsed_expr: List = []
 
-    def parse(self):
+    def parse(self) -> None:
         self.term()
         while self.position < len(self.expr) - 1:
             if self.look_ahaed == "+":
@@ -22,14 +22,14 @@ class Parser:
             else:
                 return
 
-    def term(self):
+    def term(self) -> None:
         if self.look_ahaed.isalnum():
             self.parsed_expr.append(self.look_ahaed)
             self.match(self.look_ahaed)
         else:
             raise ValueError("Syntax Error")
 
-    def match(self, t: str):
+    def match(self, t: str) -> None:
         if self.position == len(self.expr) - 1:
             return
         if self.look_ahaed == t:

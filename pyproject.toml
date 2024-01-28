@@ -1,0 +1,24 @@
+[tool.mypy]
+# Platform
+python_version = 3.8
+namespace_packages = true
+
+# Ignore 3rd party imports
+ignore_missing_imports = true
+
+# Untyped
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+
+# None and Optional
+no_implicit_optional = true
+
+# Warnings
+warn_unreachable = true
+warn_unused_ignores = true
+
+# Misc
+pretty = true
+show_error_codes = true
